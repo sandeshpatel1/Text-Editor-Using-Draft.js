@@ -1,70 +1,155 @@
-# Getting Started with Create React App
+#!/bin/bash
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Start by setting up the environment and initializing the project
 
-## Available Scripts
+echo "Cloning the repository..."
+git clone https://github.com/sandeshpatel1/Text-Editor-Using-Draft.js.git
 
-In the project directory, you can run:
+# Navigate to the project directory
+cd Text-Editor-Using-Draft.js
 
-### `npm start`
+echo "Initializing Git repository..."
+git init
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+# Set up the remote origin
+git remote add origin https://github.com/sandeshpatel1/Text-Editor-Using-Draft.js.git
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+echo "Installing dependencies..."
+npm install
 
-### `npm test`
+# Starting the application locally
+echo "Starting the application locally..."
+npm start
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+# Instructions for the user
+cat << EOF
 
-### `npm run build`
+# Text Editor Using Draft.js
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+A simple text editor built using [Draft.js](https://draftjs.org/), featuring functionalities like:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- Heading format (\#)
+- Bold format (\*)
+- Red line (\*\*)
+- Underline format (\*\*\*)
+- Save content to local storage
+- Retrieve and load saved content from local storage on page refresh
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Features
 
-### `npm run eject`
+- **Heading**: Type \`#\` at the beginning of a line and press space to switch the text to a heading.
+- **Bold**: Type \`*\` at the beginning of a line and press space to apply bold formatting.
+- **Red line**: Type \`**\` at the beginning of a line and press space to apply red color to the text.
+- **Underline**: Type \`***\` at the beginning of a line and press space to underline the text.
+- **Save**: Save content to the browser's local storage.
+- **Load**: Load saved content from local storage on page refresh.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Prerequisites
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Before you start, ensure you have the following installed:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+- [Node.js](https://nodejs.org/en/) (which includes npm)
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## Getting Started
 
-## Learn More
+Follow these steps to get the app running locally on your device.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### 1. Clone the repository
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+First, clone the repository to your local machine.
 
-### Code Splitting
+\`\`\`bash
+git clone https://github.com/sandeshpatel1/Text-Editor-Using-Draft.js.git
+\`\`\`
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+### 2. Navigate to the project directory
 
-### Analyzing the Bundle Size
+Change the directory to the project folder:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+\`\`\`bash
+cd Text-Editor-Using-Draft.js
+\`\`\`
 
-### Making a Progressive Web App
+### 3. Install dependencies
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+Install the required dependencies using npm (Node.js package manager):
 
-### Advanced Configuration
+\`\`\`bash
+npm install
+\`\`\`
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+This will install all the necessary dependencies listed in the \`package.json\` file.
 
-### Deployment
+### 4. Start the development server
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+Run the following command to start the app on a local development server:
 
-### `npm run build` fails to minify
+\`\`\`bash
+npm start
+\`\`\`
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+This will start the app and open it in your default web browser, typically at \`http://localhost:3000\`. If you’re working on a different device, ensure that your device is on the same network and replace \`localhost\` with your computer’s IP address (e.g., \`http://192.168.x.x:3000\`).
+
+### 5. Access the app from any device
+
+If you want to run the app on a different device, follow these additional steps:
+
+1. Find your computer's local IP address:
+   - **Windows**: Run \`ipconfig\` in Command Prompt and find the \`IPv4 Address\` under your network connection.
+   - **Mac/Linux**: Run \`ifconfig\` or \`ip a\` in the terminal and find your \`inet\` address.
+
+2. Make sure your firewall allows traffic on port 3000 (or whichever port the app is using).
+
+3. From your other device's browser, navigate to \`http://<your-ip>:3000\`, where \`<your-ip>\` is the IP address of the computer running the app.
+
+## Project Structure
+
+\`\`\`bash
+Text-Editor-Using-Draft.js/
+│
+├── src/
+│   ├── Components/
+│   │   ├── Editor.js           # Main Editor Component
+│   │   ├── SaveButton.js       # Button to save content to localStorage
+│   │   ├── Title.js            # Title component
+│   │   └── AppStyles.js        # Custom Styles
+│   ├── App.js                  # Main Application Entry Point
+│   ├── App.css                 # App-level styles
+│   └── index.js                # Entry point for React
+│
+├── package.json                # Dependencies and project metadata
+├── README.md                   # Project documentation
+└── .gitignore                  # Git ignore file
+\`\`\`
+
+## Saving and Loading Content
+
+- The content is automatically saved to \`localStorage\` when you type and press the \`Save\` button.
+- Upon refreshing the page, the app will load the saved content from \`localStorage\` and re-display it in the editor.
+
+## Troubleshooting
+
+- **Issue with dependencies**: If you face any issues during installation or when running the app, try removing the \`node_modules\` folder and \`package-lock.json\` file, and then reinstall the dependencies:
+  \`\`\`bash
+  rm -rf node_modules package-lock.json
+  npm install
+  \`\`\`
+
+- **Editor formatting issues**: Ensure that you’re typing the symbols (\`#\`, \`*\`, \`**\`, \`***\`) at the beginning of the line and pressing space immediately to trigger the respective format.
+
+## Built With
+
+- **React**: A JavaScript library for building user interfaces.
+- **Draft.js**: A framework for building rich text editors in React.
+- **localStorage**: Used for persisting editor content.
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## Acknowledgments
+
+- [Draft.js](https://draftjs.org/) for the rich text editor library.
+- [React](https://reactjs.org/) for building the app.
+
+EOF
